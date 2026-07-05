@@ -2,9 +2,7 @@
 
 ## How to use
 
-<video src="https://www.youtube.com/watch?v=N4zjIszoNUc" controls width="100%"></video>
-
-[[video]](https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/heads/main/vid.mp4)
+[[video]](https://www.youtube.com/watch?v=N4zjIszoNUc)
 
 
 1) See what versions exist:
