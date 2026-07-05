@@ -7,7 +7,7 @@
 [![Watch the video](https://www.youtube.com/watch?v=N4zjIszoNUc)](https://www.youtube.com/watch?v=N4zjIszoNUc)
 
 <p align="center">
-  <a href="https://youtube.com">
+  <a href="https://postimg.cc/PvynZcT5">
     <img src="https://www.youtube.com/watch?v=N4zjIszoNUc" alt="Watch the video" width="560">
   </a>
 </p>
