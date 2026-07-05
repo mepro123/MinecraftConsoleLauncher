@@ -4,6 +4,8 @@
 
 <video src="https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/heads/main/vid.mp4" controls width="100%"></video>
 
+[[วิดีโอสาธิตการใช้งาน]](https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/heads/main/vid.mp4)
+
 
 1) See what versions exist:
      python launcher.py list
