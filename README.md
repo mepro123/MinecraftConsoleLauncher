@@ -4,7 +4,7 @@
 
 [[video]]()
 
-[Watch the video]([https://postimg.cc/PvynZcT5](https://www.youtube.com/watch?v=N4zjIszoNUc))
+([Watch the video]([https://postimg.cc/PvynZcT5](https://www.youtube.com/watch?v=N4zjIszoNUc))
 
 <p align="center">
   <a href="https://postimg.cc/PvynZcT5">
