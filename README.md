@@ -2,7 +2,8 @@
 
 ## How to use
 
-https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/heads/main/vid.mp4
+<video src="https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/heads/main/vid.mp4" controls width="100%"></video>
+
 
 1) See what versions exist:
      python launcher.py list
