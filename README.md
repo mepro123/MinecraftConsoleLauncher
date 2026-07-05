@@ -1,3 +1,5 @@
+-- MINECRAFT CONSOLE LAUNCHER
+
 1) See what versions exist:
      python launcher.py list
      python launcher.py list --all          (include snapshots)
