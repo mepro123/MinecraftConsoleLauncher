@@ -2,9 +2,9 @@
 
 ## How to use
 
-<video src="https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/heads/main/vid.mp4" controls width="100%"></video>
+<video src="https://www.youtube.com/watch?v=N4zjIszoNUc" controls width="100%"></video>
 
-[[วิดีโอสาธิตการใช้งาน]](https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/heads/main/vid.mp4)
+[[video]](https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/heads/main/vid.mp4)
 
 
 1) See what versions exist:
