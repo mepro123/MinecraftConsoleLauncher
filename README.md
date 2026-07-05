@@ -2,6 +2,8 @@
 
 ## How to use
 
+https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/heads/main/vid.mp4
+
 1) See what versions exist:
      python launcher.py list
      python launcher.py list --all          (include snapshots)
