@@ -1,4 +1,4 @@
--- MINECRAFT CONSOLE LAUNCHER
+# MINECRAFT CONSOLE LAUNCHER
 
 1) See what versions exist:
      python launcher.py list
