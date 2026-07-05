@@ -67,4 +67,4 @@ Notes:
   - Pass --java "C:\path\to\java.exe" to any install/launch command to
     force a specific Java install instead of auto-detecting.
 
-1 Click Install [https://codeload.github.com/mepro123/MinecraftConsoleLauncher/zip/refs/heads/main]
+[Click To Install][https://codeload.github.com/mepro123/MinecraftConsoleLauncher/zip/refs/heads/main]
