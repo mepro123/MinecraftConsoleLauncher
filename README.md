@@ -2,7 +2,9 @@
 
 ## How to use
 
-[[video]](https://www.youtube.com/watch?v=N4zjIszoNUc)
+[[video]]()
+
+[![Watch the video](https://www.youtube.com/watch?v=N4zjIszoNUc)](https://www.youtube.com/watch?v=N4zjIszoNUc)
 
 
 1) See what versions exist:
