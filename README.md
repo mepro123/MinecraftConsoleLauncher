@@ -2,7 +2,7 @@
 
 ## How to use
 
-[[video]](https://www.youtube.com/watch?v=N4zjIszoNUc)
+[[WATCH THE VIDEO]](https://www.youtube.com/watch?v=N4zjIszoNUc)
 
 1) See what versions exist:
      python launcher.py list
