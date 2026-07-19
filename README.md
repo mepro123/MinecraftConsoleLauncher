@@ -2,7 +2,7 @@
 
 ## How to use
 
-[[WATCH THE VIDEO]](https://www.youtube.com/watch?v=N4zjIszoNUc)
+[![Watch the demo](thumbnail.png)](https://drive.google.com/file/d/1g8G0a-kPClstVw64yU7oVugbPP3ar_bN/view?usp=sharing)
 
 1) See what versions exist:
      python launcher.py list
