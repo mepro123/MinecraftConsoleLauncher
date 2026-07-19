@@ -18,7 +18,13 @@ touches your real .minecraft folder.
 USAGE
 -----
     python launcher.py list
-        List available vanilla versions (releases + snapshots).
+        List available vanilla RELEASE versions only.
+
+    python launcher.py list snapshots
+        List available SNAPSHOT versions only.
+
+    python launcher.py list release snapshots
+        List both, merged together in release-time order.
 
     python launcher.py install 1.20.4
         Download and install vanilla 1.20.4.
@@ -28,6 +34,12 @@ USAGE
 
     python launcher.py install 1.20.4 --loader forge
         Install vanilla 1.20.4 + recommended Forge (1.13+ only).
+
+    python launcher.py install 26.3-snapshot-1 --name Snapshot
+        Snapshot ids (old-style like 24w14a, or new-style like
+        26.3-snapshot-1) install exactly like any other version id.
+        Aliases latest / latest-release / snapshot / latest-snapshot
+        also work anywhere a version id is accepted.
 
     python launcher.py installed
         Show everything you've installed and their launch IDs.
@@ -446,6 +458,28 @@ def find_version_entry(manifest, version_id):
         if v["id"] == version_id:
             return v
     return None
+
+
+_LATEST_ALIASES = {
+    "latest": "release",
+    "latest-release": "release",
+    "release": "release",
+    "latest-snapshot": "snapshot",
+    "snapshot": "snapshot",
+}
+
+
+def resolve_version_id(version, manifest):
+    """Resolves friendly aliases ('latest', 'latest-release', 'snapshot',
+    'latest-snapshot') to a real version id using manifest['latest'].
+    Any other string is returned unchanged (assumed to already be a real
+    version id, e.g. '1.21.11' or a snapshot id like '24w14a')."""
+    key = _LATEST_ALIASES.get(version.strip().lower())
+    if key is None:
+        return version
+    resolved = manifest["latest"][key]
+    log(f"'{version}' -> resolved to {C.GREEN}{resolved}{C.RESET}")
+    return resolved
 
 
 def fetch_version_json(version_id, manifest=None):
@@ -1187,14 +1221,33 @@ def cmd_modpack_versions(args):
 # CLI commands
 # --------------------------------------------------------------------------
 
+_LIST_KIND_MAP = {
+    "release": "release",
+    "releases": "release",
+    "version": "release",
+    "versions": "release",
+    "snapshot": "snapshot",
+    "snapshots": "snapshot",
+}
+
+
 def cmd_list(args):
     manifest = fetch_manifest()
-    versions = manifest["versions"]
-    if not args.all:
-        versions = [v for v in versions if v["type"] == "release"]
+
+    kinds = {_LIST_KIND_MAP[k] for k in args.kinds}
+    if args.all:
+        kinds |= {"release", "snapshot"}
+    if not kinds:
+        kinds = {"release"}  # default: releases only
+
+    # manifest["versions"] already comes back newest-first, so filtering by
+    # type (rather than re-sorting) keeps both kinds merged in release-time
+    # order when both are requested.
+    versions = [v for v in manifest["versions"] if v["type"] in kinds]
+
     for v in versions[:args.count]:
         type_color = {"release": C.GREEN, "snapshot": C.YELLOW}.get(v["type"], C.MAGENTA)
-        print(f"{C.CYAN}{v['id']:<12}{C.RESET} {type_color}{v['type']:<10}{C.RESET} {C.GRAY}{v['releaseTime'][:10]}{C.RESET}")
+        print(f"{C.CYAN}{v['id']:<16}{C.RESET} {type_color}{v['type']:<10}{C.RESET} {C.GRAY}{v['releaseTime'][:10]}{C.RESET}")
 
 
 def cmd_installed(args):
@@ -1219,26 +1272,27 @@ def cmd_installed(args):
 
 def cmd_install(args):
     manifest = fetch_manifest()
-    fetch_version_json(args.version, manifest)
-    log(f"vanilla {args.version} manifest ready")
+    mc_version = resolve_version_id(args.version, manifest)
+    fetch_version_json(mc_version, manifest)
+    log(f"vanilla {mc_version} manifest ready")
 
-    version_json = fetch_version_json(args.version)
-    download_client_jar(version_json, args.version)
-    download_libraries(version_json, args.version)
+    version_json = fetch_version_json(mc_version)
+    download_client_jar(version_json, mc_version)
+    download_libraries(version_json, mc_version)
     if not args.skip_assets:
         download_assets(version_json)
     else:
         log("skipping asset download (--skip-assets)")
 
     if args.loader == "fabric":
-        version_id = install_fabric(args.version, args.loader_version)
+        version_id = install_fabric(mc_version, args.loader_version)
     elif args.loader == "forge":
-        version_id = install_forge(args.version, args.loader_version, args.java)
+        version_id = install_forge(mc_version, args.loader_version, args.java)
     else:
-        version_id = args.version
+        version_id = mc_version
 
     name = args.name or version_id
-    save_instance(name, version_id, args.version, args.loader)
+    save_instance(name, version_id, mc_version, args.loader)
 
     success(f"\nInstalled as '{name}'! Launch with:")
     print(f"  {C.CYAN}python launcher.py launch {name} --username <yourname>{C.RESET}")
@@ -1360,15 +1414,17 @@ Offline Minecraft Launcher -- quick reference
 ==============================================
 
 1) See what versions exist:
-     python launcher.py list
-     python launcher.py list --all          (include snapshots)
+     python launcher.py list                        (releases only)
+     python launcher.py list snapshots               (snapshots only)
+     python launcher.py list release snapshots       (both, merged by release time)
 
 2) Install a version as a named installation:
      python launcher.py install 1.21.11 --name Vanilla
      python launcher.py install 1.21.11 --loader fabric --name MyFabric
      python launcher.py install 1.21.11 --loader forge --name MyForge
+     python launcher.py install 26.3-snapshot-1 --name Snapshot
    (--name is optional; if you skip it, the version id itself is used as
-   the name)
+   the name. Works for any version id from 'list', release or snapshot.)
 
 3) See what's installed:
      python launcher.py installed
@@ -1453,7 +1509,10 @@ def build_parser():
     p_help.set_defaults(func=cmd_help)
 
     p_list = sub.add_parser("list", help="list available vanilla versions")
-    p_list.add_argument("--all", action="store_true", help="include snapshots")
+    p_list.add_argument("kinds", nargs="*", choices=list(_LIST_KIND_MAP.keys()),
+                         help="what to list: 'release'/'versions' (default), 'snapshots', or both "
+                              "(e.g. 'list release snapshots' shows both, merged by release time)")
+    p_list.add_argument("--all", action="store_true", help="include both releases and snapshots")
     p_list.add_argument("--count", type=int, default=25)
     p_list.set_defaults(func=cmd_list)
 
@@ -1461,7 +1520,8 @@ def build_parser():
     p_installed.set_defaults(func=cmd_installed)
 
     p_install = sub.add_parser("install", help="install a version as a named installation")
-    p_install.add_argument("version", help="Minecraft version id, e.g. 1.21.11")
+    p_install.add_argument("version", help="Minecraft version id, e.g. 1.21.11 or 24w14a, "
+                            "or an alias: latest / latest-release / latest-snapshot")
     p_install.add_argument("--loader", choices=["vanilla", "fabric", "forge"], default="vanilla")
     p_install.add_argument("--loader-version", default=None,
                             help="specific Fabric/Forge version (default: latest/recommended)")
