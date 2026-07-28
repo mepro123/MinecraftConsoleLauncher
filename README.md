@@ -6,8 +6,3 @@
 2. **Always run the `.bat` file first** if you're using the EXE version.
 3. **GitHub is the official download source** for this program.
 
-## History
-
-1.1.1 **EXE Version**
-1.1 **Added snapshot list**
-1.0 **First release**
