@@ -9,7 +9,7 @@
 
 ## Update History
 
-1. **1.0** First release
-2. **1.1** Added Snapshot lists
-3. **1.1.1** EXE version
-4. **1.2** Added browsing mods
+**1.0** First release
+**1.1** Added Snapshot lists
+**1.1.1** EXE version
+**1.2** Added browsing mods
