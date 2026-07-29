@@ -1,4 +1,4 @@
-# MINECRAFT CONSOLE LAUNCHER 1.3 <img width="32" height="32" alt="Image" src="https://github.com/user-attachments/assets/b15e94ad-3b24-46e8-a4de-9858cf4795aa" /> (SHADERS, MODS, MODPACKS BROWSING DELETE UPDATE)
+# <img width="32" height="32" alt="Image" src="https://github.com/user-attachments/assets/b15e94ad-3b24-46e8-a4de-9858cf4795aa" /> MINECRAFT CONSOLE LAUNCHER 1.3 (SHADERS, MODS, MODPACKS BROWSING DELETE UPDATE)
 
 ## Information
 
