@@ -1,4 +1,4 @@
-# MINECRAFT CONSOLE LAUNCHER 1.2 (BROWSING UPDATE)
+# MINECRAFT CONSOLE LAUNCHER 1.3 (SHADERS, MODS, MODPACKS BROWSING UPDATE)
 
 ## Information
 
@@ -13,3 +13,5 @@
 - **1.1** Added Snapshot lists
 - **1.1.1** EXE version
 - **1.2** Added browsing mods
+- **1.3** Added shaders, mods, modpacks browsing and added better deleting
+ 
