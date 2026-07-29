@@ -1,5 +1,5 @@
 @echo off
-set /p VERSION=<_internal\\version.txt
+set /p VERSION=<_internal\\version
 
 echo Version found: [%VERSION%]
 
