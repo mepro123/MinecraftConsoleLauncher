@@ -1,4 +1,4 @@
-# MINECRAFT CONSOLE LAUNCHER 1.3 (SHADERS, MODS, MODPACKS BROWSING DELETE UPDATE)
+# MINECRAFT CONSOLE LAUNCHER 1.3 <img width="32" height="32" alt="Image" src="https://github.com/user-attachments/assets/b15e94ad-3b24-46e8-a4de-9858cf4795aa" /> (SHADERS, MODS, MODPACKS BROWSING DELETE UPDATE)
 
 ## Information
 
@@ -14,5 +14,3 @@
 - **1.1.1** EXE version
 - **1.2** Added browsing mods
 - **1.3** Added shaders, mods, modpacks browsing and added better deleting
-
- <img width="32" height="32" alt="Image" src="https://github.com/user-attachments/assets/b15e94ad-3b24-46e8-a4de-9858cf4795aa" />
