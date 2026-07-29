@@ -10,5 +10,6 @@ if "%VERSION%"=="1.3" (
     echo Outdated version. Opening download page...
     start "" "https://github.com/mepro123/MinecraftConsoleLauncher"
 )
+
 pause
 
