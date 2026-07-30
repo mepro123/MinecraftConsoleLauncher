@@ -10,7 +10,7 @@
 ## Installation
 
 1. Open Powershell
-2. Execute this command
+2. Execute this command in Powershell
 ```js
 irm https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/heads/main/install.ps1 | %{$_ -replace "^\uFEFF",""} | iex
 ```
