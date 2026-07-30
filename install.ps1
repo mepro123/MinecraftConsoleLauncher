@@ -1,4 +1,5 @@
-﻿Set-Location "$env:USERPROFILE"
+$ProgressPreference = 'SilentlyContinue'
+Set-Location "$env:USERPROFILE"
 Invoke-WebRequest https://github.com/mepro123/MinecraftConsoleLauncher/archive/refs/heads/main.zip -OutFile cl.zip
 Expand-Archive cl.zip -DestinationPath . -Force
 Remove-Item cl.zip
