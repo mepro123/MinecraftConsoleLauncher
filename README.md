@@ -10,7 +10,8 @@
 ## Installation
 
 1. Open Powershell
-2. Execute this command `irm https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/heads/main/install.ps1 | %{$_ -replace "^\uFEFF",""} | iex`
+2. Execute this command ```irm https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/heads/main/install.ps1 | %{$_ -replace "^\uFEFF",""} | iex```
+
 
 ## Update History
 
