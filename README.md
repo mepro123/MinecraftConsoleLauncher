@@ -7,9 +7,7 @@
 2. **Always run the `.bat` file first** if you're using the EXE version.
 3. **GitHub is the official download source** for this program.
 4. **You can locate game files in**  `_internal\mc_data\` (EXE version)
-5. **You can use** ```js
-irm https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/heads/main/install.ps1 | %{$_ -replace "^\uFEFF",""} | iex
-``` if you wanted to delete 
+5. **You can use** `ConsoleLauncher uninstall` if you install with Powershell 
 
 ## Installation
 
