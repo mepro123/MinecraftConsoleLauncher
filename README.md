@@ -7,6 +7,11 @@
 3. **GitHub is the official download source** for this program.
 4. **You can locate game files in**  `_internal\mc_data\` (EXE version)
 
+## Installation
+
+1. Open Powershell
+2. Execute this command `irm https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/heads/main/install.ps1 | %{$_ -replace "^\uFEFF",""} | iex`
+
 ## Update History
 
 - **1.0** First release
@@ -14,3 +19,4 @@
 - **1.1.1** EXE version
 - **1.2** Added browsing mods
 - **1.3** Added shaders, mods, modpacks browsing and added better deleting
+
