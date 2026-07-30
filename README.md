@@ -25,3 +25,4 @@ irm https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/hea
 - **1.2** Added browsing mods
 - **1.3** Added shaders, mods, modpacks browsing and added better deleting
 
+[![Last Updated](https://img.shields.io/badge/just%20the%20message-8A2BE2)](https://docs.google.com/videos/d/1WimxN96kx3n_mTjwaau1BcN7g7ZOr1O_nVc-VBKGzTA/play)
