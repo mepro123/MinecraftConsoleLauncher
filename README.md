@@ -1,5 +1,5 @@
 # <p align="center">MINECRAFT CONSOLE LAUNCHER 1.3 (SHADERS, MODS, MODPACKS BROWSING DELETE UPDATE).</p>
-<p align="center"><img width="32" height="32" alt="Image" src="https://github.com/user-attachments/assets/b15e94ad-3b24-46e8-a4de-9858cf4795aa" /></p>
+<p align="center"><img width="32" height="32" alt="Image" src="https://github.com/user-attachments/assets/b15e94ad-3b24-46e8-a4de-9858cf4795aa" /></p> 
 
 ## Information
 
