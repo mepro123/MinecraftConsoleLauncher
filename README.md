@@ -7,7 +7,7 @@
 3. **GitHub is the official download source** for this program.
 4. **You can locate game files in**  `_internal\mc_data\` (EXE version)
 5. **You can use** `ConsoleLauncher uninstall` if you install with Powershell.
-6. **If you use browse** and it is taking too long to browse, this might be a problem with [modrinth api](https://status.modrinth.com).
+6. **If you download/browse** and it is taking too long to, this might be a problem with [modrinth api](https://status.modrinth.com). Modrinth have issues with search rarely 
 7. **Migrating always** find the latest version, some mods might be incompatible with each other.
 
 ## Installation
