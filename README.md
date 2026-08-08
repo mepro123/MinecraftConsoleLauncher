@@ -17,7 +17,7 @@
 ```js
 irm https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/heads/main/install.ps1 | %{$_ -replace "^\uFEFF",""} | iex
 ```
-
+[![Last Updated](https://img.shields.io/badge/Install%20GUI-blue)](https://codeload.github.com/mepro123/MinecraftConsoleLauncher/zip/refs/tags/GUI-Version)
 ## Update History
 
 - **1.0** First release
@@ -26,5 +26,3 @@ irm https://raw.githubusercontent.com/mepro123/MinecraftConsoleLauncher/refs/hea
 - **1.2** Added browsing mods
 - **1.3** Added shaders, mods, modpacks browsing and added better deleting
 - **1.4** Added resources pack and migrating 
-
-[![Last Updated](https://img.shields.io/badge/Click%20to%20know%20how%20to%20use-blue)](https://docs.google.com/videos/d/1WimxN96kx3n_mTjwaau1BcN7g7ZOr1O_nVc-VBKGzTA/play)
