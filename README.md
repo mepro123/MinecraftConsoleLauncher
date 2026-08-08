@@ -9,6 +9,7 @@
 5. **You can use** `ConsoleLauncher uninstall` if you install with Powershell.
 6. **If you download/browse** and it is taking too long, this might be a problem with [modrinth api](https://status.modrinth.com). Modrinth have issues with search rarely 
 7. **Migrating always** find the latest version, some mods might be incompatible with each other.
+8. **Put the files** in GUI version to Normal version to use.
 
 ## Installation
 
